@@ -34,6 +34,7 @@ function initEvents() {
     });
 
     $('#statsOverView').on('click', () => stats.loadLocalStats());
+    $('#statsTableClean').on('click', () => stats.statsTableClear());
 
     // for config
 

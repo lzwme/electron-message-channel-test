@@ -31,9 +31,16 @@
 
       <button type="button" class="btn-run btn btn-dark" id="runOneByOne">START:ONE-BY-ONE</button>
       <hr>
-      <button type="button" id="statsOverView" class="btn btn-info">本地数据统计</button>
-      <button type="button" id="logDisabled" class="btn btn-secondary">不打印日志</button>
-      <button type="button" id="logClean" class="btn btn-info">清空日志</button>
+      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <button type="button" id="statsOverView" class="btn btn-warning">数据统计</button>
+        <button type="button" id="statsTableClean" class="btn btn-danger">清空表格</button>
+      </div>
+
+      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <button type="button" id="logDisabled" class="btn btn-secondary">不打印日志</button>
+        <button type="button" id="logClean" class="btn btn-info">清空日志</button>
+      </div>
+
       <button type="button" id="isDebug" class="btn btn-secondary" title="console.log details">DEBUG OFF</button>
       <select class="form-select" name="mode" id="configMode">
         <option value="light">简易测试（30s内）</option>

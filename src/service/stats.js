@@ -2,7 +2,7 @@
  * @Author: lzw
  * @Date: 2022-01-28 14:42:09
  * @LastEditors: lzw
- * @LastEditTime: 2022-01-28 17:09:47
+ * @LastEditTime: 2022-01-28 17:27:05
  * @Description:
  */
 
@@ -19,6 +19,11 @@ Object.assign($.fn.bootstrapTable.defaults, {
 });
 
 const StatsTable = $('#statsOverViewTable').bootstrapTable();
+
+function statsTableClear() {
+    setStatsTableData([], true);
+}
+exports.statsTableClear = statsTableClear;
 
 function setStatsTableData(stats, reset = false) {
     if (!stats) return;
@@ -52,7 +57,7 @@ async function loadLocalStats() {
     const statsPath = './stats';
     const list = fs.readdirSync(statsPath).filter(d => d.endsWith('.json'));
 
-    setStatsTableData([], true);
+    statsTableClear();
     StatsTable.bootstrapTable('showLoading');
     const statsList = [];
     list.forEach(filename => {

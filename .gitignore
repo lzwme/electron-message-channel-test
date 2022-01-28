@@ -11,3 +11,5 @@ npm-debug.log
 pnpm-lock.yaml
 yarn.lock
 yarn-error.log
+
+.grs.config.js
