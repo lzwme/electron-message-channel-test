@@ -1,0 +1,53 @@
+body {
+    max-width: 90vw;
+    margin: auto;
+}
+
+.desc-base {
+    margin-bottom: 20px;
+}
+
+.btn-list > * {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#log {
+    margin-top: 15px;
+    display: none;
+    height: 300px;
+    overflow: auto;
+    word-wrap: normal;
+    word-break: keep-all;
+    white-space: pre;
+    background: #eee;
+}
+
+#log > li {
+    margin-bottom: 10px;
+    border-bottom: 1px #ccc dashed;
+}
+
+.running {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: .3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background: #222;
+    color: #fff;
+}
+
+select.form-select {
+    display: inline-block;
+    width: auto;
+}
+
+.stats-container {
+    min-height: 800px;
+}

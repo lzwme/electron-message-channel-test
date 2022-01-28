@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src https://unpkg.com file:; style-src unsafe-inline https://unpkg.com file: nonce-5JCeuQeRkm5NMpJWZG3hSuFUncsdfa"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://unpkg.com/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.19.1/dist/bootstrap-table.min.css">
+    <!-- <link rel="stylesheet" href="lib/bootstrap-table/bootstrap-table.min.css"> -->
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Post Message Test</title>
+  </head>
+  <body>
+    <h1>Post Message Test</h1>
+    <div class="desc-base">
+      We are using Node.js <span id="node-version"></span>,
+      Chromium <span id="chrome-version"></span>,
+      and Electron <span id="electron-version"></span>.
+    </div>
+
+    <div class="btn-list">
+      <button type="button" class="btn-run btn btn-primary" id="btnRunTestIPCSend">start:ipcRenderer.send</button>
+      <button type="button" class="btn-run btn btn-primary" id="btnRunTestIPCSendTo">start:ipcRenderer.sendTo</button>
+      <button type="button" class="btn-run btn btn-primary" id="btnRunTestBCM">start:BroadcastChannel</button>
+      <button type="button" class="btn-run btn btn-primary" id="btnRunTestBCMTwoChannel">start:BroadcastChannel-TwoChannel</button>
+      <button type="button" class="btn-run btn btn-primary" id="btnRunTestMessageChannelMain">start:MessageChannelMain</button>
+      <button type="button" class="btn-run btn btn-primary" id="btnRunTestProcessFork">start:child_process.fork</button>
+      <button type="button" class="btn-run btn btn-primary" id="btnRunTestworkerThreads">start:worker_threads</button>
+
+      <button type="button" class="btn-run btn btn-dark" id="runOneByOne">START:ONE-BY-ONE</button>
+      <hr>
+      <button type="button" id="statsOverView" class="btn btn-info">本地数据统计</button>
+      <button type="button" id="logDisabled" class="btn btn-secondary">不打印日志</button>
+      <button type="button" id="logClean" class="btn btn-info">清空日志</button>
+      <button type="button" id="isDebug" class="btn btn-secondary" title="console.log details">DEBUG OFF</button>
+      <select class="form-select" name="mode" id="configMode">
+        <option value="light">简易测试（30s内）</option>
+        <option value="normal">常规测试（约五分钟）</option>
+        <option value="big">大数据量测试（数小时）</option>
+      </select>
+
+    </div>
+
+    <div id="container"></div>
+
+    <div class="log-container">
+        <ol id="log"></ol>
+    </div>
+
+    <div class="stats-container">
+        <div id="statsOverViewTable"></div>
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./lib/jquery.js"></script>
+    <script src="./lib/bootstrap.bundle.js"></script>
+    <script src="./lib/bootstrap-table/bootstrap-table.js"></script>
+    <script src="./lib/bootstrap-table/bootstrap-table-zh-CN.js"></script>
+    <script src="./renderer.js" async></script>
+
+  </body>
+</html>
